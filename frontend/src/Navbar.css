@@ -18,6 +18,7 @@
 
 .bg-body-tertiary{
     background-color: rgb(255, 255, 255);
+    border-right: 7px solid rgb(0, 0, 0);
 }
 
 .nav-item{   
@@ -25,7 +26,8 @@
 }
 
 body{
-    background-color: rgb(95, 169, 255);
+
+    background-color: none;
 }
 
 .navbar-nav .nav-link {
