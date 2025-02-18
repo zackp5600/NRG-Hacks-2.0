@@ -1,4 +1,6 @@
 require("dotenv").config();
+const mongoose = require('mongoose');
+
 
 openai = require('openai')
 const { v4: uuidv4 } = require('uuid');
@@ -12,11 +14,13 @@ const models = require('./models');
 const app = express();
 
 app.use(cors());
-app.options('*', cors())
+// app.options('*', cors())
+console.log(process.env.MONGO_DB_URI)
+mongoose.connect(process.env.MONGO_DB_URI)
 
 app.use(express.json())
 
-app.get('/test', cors(), async function (req, res, next) {
+app.get('/test', async function (req, res, next) {
     res.json({msg: 'test'})
     console.log("asdads")
 })
@@ -32,7 +36,7 @@ app.post('/postPolicy', cors(), async function (req, res, next) {
   const policy = req.body.policy;
 
   const newPolicy = new models.Law({
-    user: policy.user ? policy.user : "Anonymous",
+    user: "Anonymous", //no time for logins
     title: policy.title,
     description: policy.description,
     uuid: uuidv4(),
@@ -49,7 +53,7 @@ app.post('/postComment', cors(), async function (req, res, next) {
   const comment = req.body.comment;
 
   const newComment = new models.Comment({
-    user: comment.user ? comment.user : "Anonymous",
+    user: "Anonymous",
     description: comment.description,
     rating: 0,
     lawUuid: comment.uuid,
