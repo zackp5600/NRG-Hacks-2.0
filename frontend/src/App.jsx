@@ -10,10 +10,16 @@ function App() {
 
   return (
     <>
-    
+
       <div>
         <Navbar />
       </div>
+      <div>
+        <div>
+          <h1>Civic Connect</h1>
+          </div>
+        </div>
+
 
     </>
   )
