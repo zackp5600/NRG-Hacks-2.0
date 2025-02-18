@@ -21,7 +21,7 @@ function Navbar() {
           
           {/* Horizontal Navbar */}
           <ul className="navbar-nav flex-column me-auto mb-2 mb-lg-0 gap-3">
-            <a className="navbar-brand" href="#">NRG Hacks</a>  
+            <img src="src/assets/logo.png" className='logo'></img>
             <li className="nav-item">
               <a className="nav-link active" href="#">Home</a>
             </li>

@@ -1,8 +1,46 @@
+.top-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-; */
+}
+
+.container{
+    /* position: relative; */
+    border-image: conic-gradient(red,blue,red);
+    border-radius: 4px;
+    border-width: 4px;
+    /* padding: 4p  x; */
+    /* left: 5%; */
+    /* top: 1%; */
+}
+.container::after{
+    background-image: conic-gradient(from var(--angle),transparent, blue, red, green, blue);
+}
+
+.card{
+    /* position: relative; */
+    text-align: center;
+    background: none;
+
+    width: 80vw;
+    margin: 15%;
+
+}
+
 h1{
     position: relative;
-    bottom: 700px;
-    left: 300%;
-    font-family: 'Times New Roman', Times, serif;
+     /* bottom: 700px; */
+        /* left: 300%;  */
+    font-family: DejaVu Sans Mono, monospace	;
     text-align: center;
-    font-weight:800;
+    font-size: 10vh;
+    color: white;
 }
+p{
+    position: relative;
+    text-align: center;
+    font-size: 3vh;
+    color: white;
+    font-family: DejaVu Sans Mono, monospace;
+}
+
