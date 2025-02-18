@@ -2,25 +2,52 @@
     display: flex;
 }
 
-.post-input-main {
-    padding: 3vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.post-input-color {
-    padding: 1vh;
-    background-color: rgb(255, 255, 255);
-}
-
-.description {
-    height: 30vh;
-    overflow-wrap: break-word; 
-}
-
-h1 {
-    padding-top: 3vh;
+.votecards {
     padding-left: 3vh;
-    font-size: 40px;
-    justify-self: flex-start;
+    display: flexbox;
+    width: 30vw;
+}
+
+.votecard {
+    width: 75vw;
+    padding: 0px;
+    font-family: monospace;
+    background-color: white;
+}
+
+.grey {
+    background-color: rgb(166, 166, 166);
+
+    width: 75vw;
+    padding: 0px;
+    font-family: monospace;
+}
+
+.voteuser {
+    padding-left: 3vh;
+    padding-top: 3vh;
+}
+
+.votetitle {
+    font-size: 20px;
+    padding-left: 3vh;
+    padding-bottom: 1vh;
+}
+
+.votedescription {
+    padding-left: 3vh;
+    padding-bottom: 2vh;
+}
+
+.votebutton {
+    padding-left: 3vh;
+    padding-bottom: 3vh;
+}
+
+.greybtn {
+    background-color: rgb(166, 166, 166);
+}
+
+.whitebtn {
+    background-color: white;
 }

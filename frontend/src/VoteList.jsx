@@ -11,10 +11,17 @@ function VoteList() {
         return policies
     }
     
-    const policies = new useState({})
+    const [policies, setPolicies] = new useState([]);
 
     useEffect(() => {
-        policies = handleGetAllPolicies()
+        async function init() {
+            await handleGetAllPolicies().then(response => {
+                setPolicies(response)
+                console.log(response)
+            })
+            
+        }
+        init();
     }, [])
 
     return (
@@ -26,10 +33,29 @@ function VoteList() {
                         Trending Policies
                     </h1>
                     <div>
-                        <div className='cards'>
-                            {objects.map((object, i) => 
-                                <div className='card' key={i}>
+                        <div className='votecards'>                       
+                            {policies.map((policy, i) => 
+                                <div className={i % 2 > 0 ? 'grey' : 'votecard'} key={i}>
+                                    <div>
+                                        <div className='voteuser'>
+                                            {policies[i].user}
+                                        </div>
+                                        
+                                        <div className='votetitle'>
+                                            {policies[i].title}
+                                        </div>
+                                        
+                                        <div className='votedescription'>
+                                            {policies[i].description}
+                                        </div>
 
+                                        <div className='votebutton'>
+                                            <button className={i % 2 > 0 ? 'whitebtn' : 'greybtn'}>
+                                                View policy
+                                            </button>
+                                        </div>
+
+                                    </div>
                                 </div>
                             )}
                         </div>
