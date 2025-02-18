@@ -12,16 +12,13 @@ function Navbar() {
             <button className='logo-button'> 
               <img src="src/assets/logo.png" className='logo'></img>
             </button><li className="nav-item">
-            <a className="nav-link active" href="#">Home</a>
+            <a className="nav-link active" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Suggest Policy</a>
+              <a className="nav-link" href="/suggestPolicy">Suggest Policy</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Vote on Policy</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Updates</a>
+              <a className="nav-link" href="/voteList">Vote on Policy</a>
             </li>
           </ul>
         </div>
