@@ -1,0 +1,27 @@
+.container-fluid{
+    background-color: hsl(0, 0%, 100%);
+    padding-top: 93%; 
+    padding-bottom: 10%;   
+}
+.bg-body-tertiary{
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-item{   
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+body{
+    background-color: rgb(95, 169, 255);
+}
+
+
+.navbar-nav .nav-link {
+  padding: 15% 50%; /* Add spacing to links */
+  font-size: 1.5rem;
+}
+.navbar-brand{
+    font-size: 2rem;
+}
+
