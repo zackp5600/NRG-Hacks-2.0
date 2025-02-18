@@ -18,9 +18,7 @@ function App() {
             <h1>CivicConnect</h1>
             <div className='line'></div>
             <br></br>
-            <h2>
-            Where citizens get their voices heard
-            </h2>
+            <h2>Where citizens get their voices heard</h2>
             <br></br>
             <p>Civic Connect is a dynamic, community-driven platform designed to connect individuals with the power to influence public policy. It allows citizens to propose, discuss, and vote on policies that are important to them, creating a space where every voice has the potential to spark real-world change.
 

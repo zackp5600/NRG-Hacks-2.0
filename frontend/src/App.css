@@ -19,10 +19,7 @@ body{
     z-index: 1;
     background: #649efa;
 
-    /* border: ; */
-    /* padding: 4px; */
-    /* left: 5%; */
-    /* top: 1%; */
+
 }
 @property --angle{
     syntax: "<angle>";
@@ -51,12 +48,11 @@ body{
 
 h1{
     position: relative;
-     /* bottom: 700px; */
-        /* left: 300%;  */
     font-family: DejaVu Sans Mono, monospace	;
     text-align: center;
     font-size: 10vh;
     color: white;
+    width: 100%;
 }
 
         
@@ -66,7 +62,9 @@ h1{
 }  */
   
 .container{
-    /* filter: blur(0.5rem); */
+    position: relative;
+    filter: drop-shadow(0 0 100px rgba(0,255, 255, 0.8));
+    
 }
 
 p{
@@ -84,5 +82,6 @@ p{
 
 h2{
     color: white;
+    text-align: center;
     font-family: DejaVu Sans Mono, monospace;
 }
