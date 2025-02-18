@@ -22,6 +22,16 @@ export async function getAllPolicies(){
     }
 }
 
+export async function getPolicy(uuid){  
+  try {
+      const response = await axios.get(`${API_URL}/getPolicy/${uuid}`);
+      console.log(response);
+      return response.data.msg
+  } catch (error) {
+      console.error(error);
+  }
+}
+
 export async function postPolicy(title, description){  
     axios.post(`${API_URL}/postPolicy`, {
         policy: {
@@ -37,3 +47,19 @@ export async function postPolicy(title, description){
         console.log(error);
       });
 }
+
+export async function postVote(goodorbad, uuid){  
+    axios.post(`${API_URL}/postVote`, {
+        vote: {
+            sentiment: goodorbad,
+            uuid: uuid,
+        }
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}
+

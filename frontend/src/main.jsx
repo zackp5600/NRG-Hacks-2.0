@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/suggestPolicy" element={<SuggestPolicy />} />
         <Route path="/voteList" element={<VoteList />} />
-        <Route path="/vote" element={<Vote />} />
+        <Route path="/vote/:uuid" element={<Vote />} />
       </Routes>
     </BrowserRouter>,
 )

@@ -1,16 +1,25 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router";
+ 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './VoteList.css'
 import Navbar from './Navbar'
 import { postPolicy, getAllPolicies } from '../api/api';
 
 function VoteList() {
+    let navigate = useNavigate();
+
+
     async function handleGetAllPolicies() {
         const policies = await getAllPolicies();
         console.log(policies);
         return policies
     }
     
+    const viewPolicy = (uuid) => {
+        navigate(`/vote/${policies[uuid].uuid}`);
+    }
+
     const [policies, setPolicies] = new useState([]);
 
     useEffect(() => {
@@ -50,7 +59,7 @@ function VoteList() {
                                         </div>
 
                                         <div className='votebutton'>
-                                            <button className={i % 2 > 0 ? 'whitebtn' : 'greybtn'}>
+                                            <button onClick={() => viewPolicy(i)} className={i % 2 > 0 ? 'whitebtn' : 'greybtn'}>
                                                 View policy
                                             </button>
                                         </div>

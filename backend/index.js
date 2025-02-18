@@ -30,6 +30,11 @@ app.get('/getAllPolicies', cors(), async function (req, res, next) {
   res.json({msg: await models.Law.find({})})
 })
 
+app.get('/getPolicy/:uuid', cors(), async function (req, res, next) {
+  console.log("Returning all laws")
+  res.json({msg: await models.Law.findOne({uuid: req.params.uuid})});
+})
+
 app.post('/postPolicy', cors(), async function (req, res, next) {
   console.log("Posting policy")
 
@@ -40,11 +45,31 @@ app.post('/postPolicy', cors(), async function (req, res, next) {
     title: policy.title,
     description: policy.description,
     uuid: uuidv4(),
+    good: 0,
+    bad: 0,
   })
 
   await newPolicy.save();
 
   res.send('Post policy successful');
+})
+
+app.post('/postVote', cors(), async function (req, res, next) {
+  console.log("Posting vote")
+  const vote = req.body.vote;
+  trueID = await models.Law.findOne({uuid: vote.uuid})
+  console.log(trueID)
+
+  if (vote.sentiment == true){
+    console.log(vote)
+    await models.Law.findOneAndUpdate({uuid: vote.uuid}, 
+      {$inc: { good : 1 }}, { new: true, upsert: true });
+  } else {
+    await models.Law.findOneAndUpdate({uuid: vote.uuid}, 
+      {$inc: { bad : 1 }}, { new: true, upsert: true });
+  }
+
+  res.send('Post vote successful');
 })
 
 app.post('/postComment', cors(), async function (req, res, next) {

@@ -4,7 +4,8 @@ const lawSchema = new mongoose.Schema({
     user: String,
     title: String,
     description: String,
-    scope: String,
+    good: Number,
+    bad: Number,
     uuid: String,
 })
 

@@ -1,39 +1,65 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Vote.css'
 import Navbar from './Navbar'
-import { postPolicy, getAllPolicies } from '../api/api';
+import { postVote, getAllPolicies, getPolicy } from '../api/api';
+import { useParams } from 'react-router-dom';
 
 function Vote() {
-    async function handleGetAllPolicies() {
-        const policies = await getAllPolicies();
-        console.log(policies);
-        return policies
+    const { uuid } = useParams();
+    
+    const [policy, setPolicy] = new useState([]);
+
+    async function handleGetPolicy () {
+        return(await getPolicy(uuid));
+    }
+    
+    useEffect(() => {
+        async function init() {
+            await handleGetPolicy().then(response => {
+                setPolicy(response)
+                console.log(response)
+            })
+        }
+        init();
+    }, [])
+
+    
+    async function handlePostVote(vote) {
+        await postVote(vote, uuid).then(alert("Vote submitted!"));
     }
 
     return (
         <>
-            <div className='main-suggest-container'>
+            <div className='main-vote-container'>
                 <Navbar />
-                <div className='post-generation-container'>
+                <div className='container2'>
                     <h1>
-                        Vote
+                            Rate a policy 
                     </h1>
-                    <div>
-                        <form>
-                            <div className='post-input-main'>
-                                <div className='post-input-color'>
-                                    <div className='post-input-title'>
-                                        <textarea name="title" placeholder='Post title...'/>
-                                    </div>
-                                    <div className='post-input-description'>
-                                        <textarea className='description' name="description" placeholder='Describe your policy...'/>
-                                    </div>
-                                </div>
-                                <button type="submit">Submit</button>
+                    <div className='v'>
+                        <div className='v5'>
+
+                            <div className='v2'>
+                            <div className='voteuser'>
+                                {policy.user}
                             </div>
-                        </form>
-                    </div>    
+                            
+                            <div className='votetitle'>
+                                {policy.title}
+                            </div>
+                            
+                            <div className='votedescription'>
+                                {policy.description}
+                            </div>
+
+                                <div className='vbuttoncontainer'>
+                                    <button className='vbutton green' onClick={() => handlePostVote(true)}>Upvote</button>
+                                    <button className='vbutton red' onClick={() => handlePostVote(false)}>Downvote</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
