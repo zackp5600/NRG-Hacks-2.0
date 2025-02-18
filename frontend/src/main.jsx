@@ -8,6 +8,6 @@ import VoteList from './VoteList.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <VoteList />
+    <App />
   </StrictMode>,
 )
