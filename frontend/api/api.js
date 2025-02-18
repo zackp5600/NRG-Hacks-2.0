@@ -16,7 +16,7 @@ export async function getAllPolicies(){
     try {
         const response = await axios.get(`${API_URL}/getAllPolicies`);
         console.log(response);
-        return response.data
+        return response.data.msg
     } catch (error) {
         console.error(error);
     }
