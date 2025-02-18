@@ -1,8 +1,6 @@
 require("dotenv").config();
 const mongoose = require('mongoose');
 
-
-openai = require('openai')
 const { v4: uuidv4 } = require('uuid');
 
 const express = require('express');
@@ -11,7 +9,7 @@ const cors = require('cors');
 const models = require('./models');
 
 
-const app = express();
+const app = express();  
 
 app.use(cors());
 // app.options('*', cors())

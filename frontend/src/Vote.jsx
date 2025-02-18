@@ -52,10 +52,10 @@ function Vote() {
                             <div className='votedescription'>
                                 {policy.description}
                             </div>
-
+                            
                                 <div className='vbuttoncontainer'>
-                                    <button className='vbutton green' onClick={() => handlePostVote(true)}>Upvote</button>
-                                    <button className='vbutton red' onClick={() => handlePostVote(false)}>Downvote</button>
+                                    <button className='vbutton green' onClick={() => handlePostVote(true)}>Upvote ({policy.good})</button>
+                                    <button className='vbutton red' onClick={() => handlePostVote(false)}>Downvote({policy.bad})</button>
                                 </div>
                             </div>
                         </div>
