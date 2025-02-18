@@ -15,8 +15,17 @@ function App() {
           <Navbar />
         <div className='card'>
           <div className='container'>
-            <h1>Civic Connect</h1>
-            <p>Civic Connect is a community-driven platform that empowers individuals to propose, discuss, and vote on policies that matter to them. Whether you're passionate about local issues or global challenges, Civic Connect provides a space to share your ideas, collaborate with like-minded people, and influence real change.</p>
+            <h1>CivicConnect</h1>
+            <div className='line'></div>
+            <br></br>
+            <h2>
+            Where citizens get their voices heard
+            </h2>
+            <br></br>
+            <p>Civic Connect is a dynamic, community-driven platform designed to connect individuals with the power to influence public policy. It allows citizens to propose, discuss, and vote on policies that are important to them, creating a space where every voice has the potential to spark real-world change.
+
+With Civic Connect, citizens are no longer passive recipients of policies but active participants in shaping their communities, governments, and societies. Whether you're passionate about environmental issues, social justice, healthcare, education, or economic reform, Civic Connect helps you bring your ideas to life and gain support from others who share your values.</p>
+
           </div>
         </div>
 

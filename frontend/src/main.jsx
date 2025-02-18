@@ -6,6 +6,6 @@ import SuggestPolicy from './SuggestPolicy.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <SuggestPolicy />
+    <App />
   </StrictMode>,
 )
