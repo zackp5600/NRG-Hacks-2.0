@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './SuggestPolicy.css'
+import './Vote.css'
 import Navbar from './Navbar'
-import { getTest, postPolicy, getAllPolicies } from '../api/api';
+import { postPolicy, getAllPolicies } from '../api/api';
 
-function SuggestPolicy() {
-
-    async function handlePostPolicy(formData) {
-        await postPolicy(formData.get("title"), formData.get("description"))
+function Vote() {
+    async function handleGetAllPolicies() {
+        const policies = await getAllPolicies();
+        console.log(policies);
+        return policies
     }
-
 
     return (
         <>
@@ -17,17 +17,17 @@ function SuggestPolicy() {
                 <Navbar />
                 <div className='post-generation-container'>
                     <h1>
-                        Suggest a policy 
+                        Vote
                     </h1>
                     <div>
-                        <form action={handlePostPolicy}>
+                        <form>
                             <div className='post-input-main'>
                                 <div className='post-input-color'>
                                     <div className='post-input-title'>
-                                        <textarea className='sparea' name="title" placeholder='Post title...'/>
+                                        <textarea name="title" placeholder='Post title...'/>
                                     </div>
                                     <div className='post-input-description'>
-                                        <textarea className='description sparea' name="description" placeholder='Describe your policy...'/>
+                                        <textarea className='description' name="description" placeholder='Describe your policy...'/>
                                     </div>
                                 </div>
                                 <button type="submit">Submit</button>
@@ -40,4 +40,4 @@ function SuggestPolicy() {
     )   
 }
 
-export default SuggestPolicy
+export default Vote

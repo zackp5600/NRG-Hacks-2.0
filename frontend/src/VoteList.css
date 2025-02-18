@@ -1,4 +1,4 @@
-.main-suggest-container {
+.VoteList_main-container {
     display: flex;
 }
 
@@ -11,12 +11,6 @@
 .post-input-color {
     padding: 1vh;
     background-color: rgb(255, 255, 255);
-}
-
-.sparea {
-    width: 75vw;
-    overflow-wrap: break-word;  
-    inline-size: 75vw;
 }
 
 .description {
