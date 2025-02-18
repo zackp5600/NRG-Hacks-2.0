@@ -1,5 +1,8 @@
 h1{
     position: relative;
-    bottom: 750px;
-    left: 250%;
+    bottom: 700px;
+    left: 300%;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight:800;
 }

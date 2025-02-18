@@ -1,7 +1,12 @@
 .container-fluid{
+    position: relative;
     background-color: hsl(0, 0%, 100%);
-    padding-top: 93%; 
-    padding-bottom: 10%;   
+    top: -125px;
+    height: 700px;
+    /* bottom: -200px; */
+    /* padding-top: 150%;  */
+    padding-bottom: 30%;
+
 }
 .bg-body-tertiary{
     background-color: rgb(255, 255, 255);
@@ -9,7 +14,7 @@
 
 .nav-item{   
     font-family: 'Times New Roman', Times, serif;
-
+    
 }
 
 body{
@@ -18,10 +23,11 @@ body{
 
 
 .navbar-nav .nav-link {
-  padding: 15% 50%; /* Add spacing to links */
+  /* padding: 1% 0%; */
   font-size: 1.5rem;
+  justify-content: space-around;
 }
 .navbar-brand{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
